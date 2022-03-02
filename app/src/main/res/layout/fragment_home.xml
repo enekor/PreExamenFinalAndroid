@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent" android:padding="25dp">
+
+    <ImageView
+            android:layout_width="171dp"
+            android:layout_height="178dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/setImagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/setNombre"
+            app:layout_constraintTop_toBottomOf="@+id/setImagen" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="Give it a name" android:minHeight="48dp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="25dp" android:padding="10dp">
+        <Button
+                android:text="take photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/pickPhoto" android:layout_weight="1"
+                android:layout_marginEnd="25dp"/>
+        <Button
+                android:text="save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/savePhoto" android:layout_weight="1"
+                android:layout_marginStart="25dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

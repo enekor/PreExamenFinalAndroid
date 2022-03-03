@@ -56,6 +56,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 guardarImagen();
+                Toast.makeText(getActivity(), "Imagen guardada", Toast.LENGTH_SHORT).show();
+                binding.setNombre.setText("");
+                binding.setImagen.setImageURI(Uri.EMPTY);
             }
         });
 

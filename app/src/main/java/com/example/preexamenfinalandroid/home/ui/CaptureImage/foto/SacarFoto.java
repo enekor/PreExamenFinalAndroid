@@ -31,16 +31,23 @@ public class SacarFoto {
     private final static int CODIGO = 3333;
     private final Context contexto;
     private final HomeFragment homeFragment;
-    //private final ImageView imagen;
     private Fragment fragmento = null;
     private String imagePath = "";
     private Uri imageUri = Uri.EMPTY;
-    private ActivityResultLauncher<Intent> launcher;
 
-    public SacarFoto(Context contexto, Fragment fragmento/*, ImageView imagen*/, HomeFragment homeFragment){
+    public Uri getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageUri(Uri imageUri) {
+        this.imageUri = imageUri;
+    }
+
+    private ActivityResultLauncher launcher;
+
+    public SacarFoto(Context contexto, Fragment fragmento, HomeFragment homeFragment){
         this.contexto = contexto;
         this.fragmento = fragmento;
-        //this.imagen = imagen;
         this.homeFragment = homeFragment;
         setLauncher();
     }
@@ -82,6 +89,6 @@ public class SacarFoto {
     }
 
     private void setLauncher(){
-        launcher = homeFragment.setLauncher(imageUri);
+        launcher = homeFragment.setLauncher();
     }
 }

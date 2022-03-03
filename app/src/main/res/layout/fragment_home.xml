@@ -5,11 +5,6 @@
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent" android:padding="25dp">
 
-    <ImageView
-            android:layout_width="171dp"
-            android:layout_height="178dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/setImagen"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,4 +31,9 @@
                 android:layout_height="wrap_content" android:id="@+id/savePhoto" android:layout_weight="1"
                 android:layout_marginStart="25dp"/>
     </LinearLayout>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars" android:id="@+id/setImagen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

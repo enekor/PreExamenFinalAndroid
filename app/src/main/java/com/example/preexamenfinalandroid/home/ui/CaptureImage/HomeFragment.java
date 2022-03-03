@@ -2,10 +2,12 @@ package com.example.preexamenfinalandroid.home.ui.CaptureImage;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -40,13 +42,12 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
         final Button takePhoto = binding.pickPhoto;
         takePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 imagePath = sacarFoto.sacarFoto();
-                binding.setImagen.setImageURI(imagePath);
+                //binding.setImagen.setImageURI(imagePath);
             }
         });
 
@@ -92,12 +93,18 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    public ActivityResultLauncher setLauncher(Uri imageUri){
+    public ActivityResultLauncher setLauncher(){
         return registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
-                binding.setImagen.setImageURI(imageUri);
+                //result.getData().getExtras(MediaStore.)
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.setImagen.setImageURI(sacarFoto.getImageUri());
     }
 }

@@ -45,4 +45,11 @@ public class GalleryFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adaptador = new Adapter(getActivity());
+        recycler.setAdapter(adaptador);
+    }
 }

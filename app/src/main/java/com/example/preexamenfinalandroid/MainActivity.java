@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         createUserIfNecesary();
         Toast.makeText(this, ""+BaseDeDatos.getInstance(this).ownerRepository().getAll().size(), Toast.LENGTH_SHORT).show();
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dual_main);
 
         login = findViewById(R.id.login);
         nombre = findViewById(R.id.nombreLogin);
